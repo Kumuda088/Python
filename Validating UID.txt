@@ -1,0 +1,24 @@
+def is_valid_uid(uid):
+    if len(uid) != 10:
+        return "Invalid"
+    uppercase_count = 0
+    for char in uid:
+        if char.isupper():
+            uppercase_count += 1
+    if uppercase_count < 2:
+        return "Invalid"
+    digit_count = 0
+    for char in uid:
+        if char.isdigit():
+            digit_count += 1
+    if digit_count < 3:
+        return "Invalid"
+    if not uid.isalnum():
+        return "Invalid"
+    if len(set(uid)) != len(uid):
+        return "Invalid"
+    return "Valid"
+n = int(input())
+for _ in range(n):
+    uid = input().strip()
+    print(is_valid_uid(uid))
