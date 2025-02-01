@@ -1,0 +1,14 @@
+def split_and_join(line):
+    edited_line = ''
+    for i in line:
+        if i == ' ':
+            edited_line = edited_line + '-'
+        else:
+            edited_line = edited_line + i
+    return edited_line
+    
+
+if __name__ == '__main__':
+    line = input()
+    result = split_and_join(line)
+    print(result)
