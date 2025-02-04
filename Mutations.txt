@@ -1,0 +1,11 @@
+def mutate_string(string, position, character):
+    split = [i for i in string]
+    split[position] = character
+    return ''.join(split)
+    
+
+if __name__ == '__main__':
+    s = input()
+    i, c = input().split()
+    s_new = mutate_string(s, int(i), c)
+    print(s_new)
